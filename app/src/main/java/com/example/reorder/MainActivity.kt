@@ -30,10 +30,24 @@ class MainActivity : AppCompatActivity() {
 
         val buttonc = findViewById<Button>(R.id.activityc)
         buttonc.setOnClickListener {
-            val intent = Intent(this, ActivityB::class.java).putExtra("str", "A")
+            val intent = Intent(this, ActivityC::class.java).putExtra("str", "C")
             intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             Toast.makeText(this, "Opening Activity B", Toast.LENGTH_LONG).show()
             startActivity(intent)
         }
+        val openedBy = intent.getStringExtra("str")
+        if(openedBy != null)
+            updateText(openedBy)
+        else
+            findViewById<TextView>(R.id.opa).text = "Start Activity"
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        intent?.getStringExtra("str")?.let { updateText(it) }
+    }
+
+    private fun updateText(activityName: String) {
+        findViewById<TextView>(R.id.opa).text = "Opened By $activityName"
     }
 }
