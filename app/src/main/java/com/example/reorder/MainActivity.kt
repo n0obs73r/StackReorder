@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val buttonb = findViewById<Button>(R.id.activityb)
         buttonb.setOnClickListener {
             val intent = Intent(this, ActivityB::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             Toast.makeText(this, "Opening Activity B", Toast.LENGTH_LONG).show()
             startActivity(intent)
         }
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val buttonc = findViewById<Button>(R.id.activityc)
         buttonc.setOnClickListener {
             val intent = Intent(this, ActivityB::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             Toast.makeText(this, "Opening Activity B", Toast.LENGTH_LONG).show()
             startActivity(intent)
         }
