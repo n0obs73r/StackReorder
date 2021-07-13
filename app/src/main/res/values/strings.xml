@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Reorder</string>
+    <string name="activity_a">Activity A</string>
+    <string name="activity_b">Activity B</string>
+    <string name="activity_c">Activity C</string>
+    <string name="opened_by">Opened By</string>
+</resources>
